@@ -35,7 +35,7 @@ export function BottomBanner() {
     >
       <div
         ref={containerRef}
-        className="relative w-full h-[657px] overflow-hidden"
+        className="relative w-full h-[400px] overflow-hidden md:h-[550px] lg:h-[657px]"
       >
         <Image
           src="/images/bottom-banner-image.jpg"

@@ -5,7 +5,7 @@ export function AboutUs() {
   return (
     <section
       id="about"
-      className="w-full pb-[75px] font-sans"
+      className="w-full pt-[75px] pb-[75px] font-sans md:pt-0"
       aria-label="About Us"
     >
       {/* Section header: black square + ABOUT US + horizontal line */}

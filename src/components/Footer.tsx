@@ -24,7 +24,7 @@ export function Footer() {
       className="bg-white text-[#171717]"
       aria-label="Site footer"
     >
-      <div className="mx-auto w-full max-w-[1320px] px-4 py-12 md:px-0 md:py-16">
+      <div className="mx-auto w-full max-w-[1320px] px-4 py-12 md:px-6 md:py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
           {/* Brand column */}
           <div className="flex flex-col gap-4">

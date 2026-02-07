@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-white font-sans">
-      <div className="mx-auto flex h-[80px] w-full max-w-[1320px] items-center justify-between border-b border-[#e5e5e5] px-4 md:px-0">
+      <div className="mx-auto flex h-[80px] w-full max-w-[1320px] items-center justify-between border-b border-[#e5e5e5] px-4 md:px-6 lg:px-8">
         <Link href="#home" className="flex items-center">
           <Image
             src="/images/Citlali%20logo.svg"
@@ -29,9 +29,9 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav - show from lg so iPad portrait gets mobile menu */}
         <nav
-          className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-12 font-sans md:flex"
+          className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 font-sans lg:flex xl:gap-12"
           aria-label="Main navigation"
         >
           {navLinks.map(({ href, label }) => (
@@ -54,10 +54,10 @@ export function Header() {
             Get A Quote
           </Link>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - visible until lg so iPad portrait gets hamburger */}
           <button
             type="button"
-            className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md text-[#4a4a4a] hover:bg-[#f5f5f5] hover:text-black md:hidden"
+            className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md text-[#4a4a4a] hover:bg-[#f5f5f5] hover:text-black lg:hidden"
             onClick={() => setMobileMenuOpen((open) => !open)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav"
@@ -80,13 +80,13 @@ export function Header() {
       {/* Mobile nav */}
       <div
         id="mobile-nav"
-        className={`overflow-hidden bg-white transition-[height] duration-200 ease-out md:hidden ${
+        className={`overflow-hidden bg-white transition-[height] duration-200 ease-out lg:hidden ${
           mobileMenuOpen ? "h-auto" : "h-0"
         }`}
         aria-hidden={!mobileMenuOpen}
       >
         <nav
-          className="mx-auto flex max-w-[1320px] flex-col gap-0 border-t border-[#e5e5e5] px-4 py-4 font-sans md:px-0"
+          className="mx-auto flex max-w-[1320px] flex-col gap-0 border-t border-[#e5e5e5] px-4 py-4 font-sans md:px-6 lg:px-8"
           aria-label="Mobile navigation"
         >
           {navLinks.map(({ href, label }) => (

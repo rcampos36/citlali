@@ -78,7 +78,7 @@ export function Services() {
               <div className="font-heading text-[24px] font-semibold uppercase tracking-tight text-[#4a4c56]">
                 {service.number}
               </div>
-              <h3 className="font-heading text-[40px] font-semibold leading-tight tracking-tight text-[#4a4c56]">
+              <h3 className="font-heading text-2xl font-semibold leading-tight tracking-tight text-[#4a4c56] md:text-3xl lg:text-[40px]">
                 {service.title}
               </h3>
               <p className="text-base leading-relaxed text-[#171717]">

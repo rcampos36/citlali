@@ -30,7 +30,7 @@ export function HeroBanner() {
     <section
       id="home"
       ref={containerRef}
-      className="w-full font-sans md:min-h-[1097px] md:pb-[75px]"
+      className="w-full font-sans md:min-h-[800px] md:pb-[75px] lg:min-h-[1097px]"
       aria-label="Hero"
     >
       <div className="hero-bg-lines w-full">

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback, useRef } from "react";
 
-const PROJECT_PANEL_HEIGHT_PX = 718;
 const AUTO_ADVANCE_MS = 3000;
 const FADE_DURATION_MS = 600;
 
@@ -53,7 +52,6 @@ function ProjectPanel({
     <div
       className="absolute inset-0 transition-opacity ease-out"
       style={{
-        height: PROJECT_PANEL_HEIGHT_PX,
         opacity: isActive ? 1 : 0,
         zIndex: isActive ? 10 : 0,
         transitionDuration: `${FADE_DURATION_MS}ms`,
@@ -66,25 +64,16 @@ function ProjectPanel({
           alt={project.imageAlt}
           fill
           className="object-cover"
-          sizes="1320px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1320px) 100vw, 1320px"
           unoptimized
         />
       </div>
-      <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 pt-6 md:px-8">
-        <div
-          className="mx-auto rounded-none border border-black bg-white px-6 py-5 text-center shadow-[0_4px_24px_rgba(0,0,0,0.08)] md:px-8 md:py-6"
-          style={{ width: "595px" }}
-        >
-          <h3
-            className="font-heading font-semibold tracking-tight text-[#171717]"
-            style={{ fontSize: "40px" }}
-          >
+      <div className="absolute bottom-0 left-0 right-0 px-4 pb-6 pt-4 sm:pb-8 sm:pt-6 md:px-8">
+        <div className="mx-auto w-full max-w-[595px] rounded-none border border-black bg-white px-4 py-4 text-center shadow-[0_4px_24px_rgba(0,0,0,0.08)] sm:px-6 sm:py-5 md:px-8 md:py-6">
+          <h3 className="font-heading text-2xl font-semibold tracking-tight text-[#171717] sm:text-3xl md:text-[40px]">
             {project.title}
           </h3>
-          <p
-            className="mt-2 font-sans text-base text-[#4a4c56]"
-            style={{ fontSize: "16px" }}
-          >
+          <p className="mt-2 font-sans text-sm text-[#4a4c56] sm:text-base">
             {project.number}{" "}
             <span className="text-[#171717]">{project.description}</span>
           </p>
@@ -153,10 +142,9 @@ export function ProjectsSection() {
           </div>
         </div>
 
-        <div className="relative mt-16">
+        <div className="relative mt-8 sm:mt-12 md:mt-16">
           <div
-            className="relative mx-auto w-full max-w-[1320px] overflow-hidden"
-            style={{ height: PROJECT_PANEL_HEIGHT_PX }}
+            className="relative mx-auto w-full max-w-[1320px] overflow-hidden aspect-[1320/718] min-h-[280px] sm:min-h-[360px] md:min-h-[480px] lg:min-h-0"
             aria-roledescription="carousel"
             aria-label="Project gallery"
           >

@@ -43,15 +43,7 @@ function TestimonialImage({
   inView: boolean;
 }) {
   return (
-    <div
-      className="group relative overflow-hidden"
-      style={{
-        aspectRatio: "545/560",
-        height: 560,
-        maxWidth: "100%",
-        width: 545,
-      }}
-    >
+    <div className="group relative w-full max-w-[545px] overflow-hidden aspect-[545/560]">
       <Image
         src={src}
         alt={alt}
@@ -59,7 +51,7 @@ function TestimonialImage({
         className={`object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110 ${
           inView ? "animate-reveal-zoom" : "scale-[1.1]"
         }`}
-        sizes="(max-width: 767px) 100vw, 545px"
+        sizes="(max-width: 767px) 100vw, (max-width: 1024px) 50vw, 545px"
         unoptimized
       />
       <div
@@ -129,10 +121,10 @@ export function TestimonialsSection() {
           />
         </h2>
 
-        {/* Two-column: left = quote + author + nav; right = image (paragraph lines up with top of image) */}
-        <div className="mt-32 grid w-full grid-cols-1 items-start gap-8 md:grid-cols-[1fr_auto] md:gap-12 lg:gap-16">
+        {/* Two-column at lg: left = quote + author + nav; right = image. Stack on mobile/tablet for iPad. */}
+        <div className="mt-16 grid w-full grid-cols-1 items-start gap-10 md:mt-24 lg:mt-32 lg:grid-cols-[1fr_auto] lg:gap-16">
           <div
-            className="flex min-h-[560px] flex-col transition-all duration-700 ease-out"
+            className="flex min-h-0 flex-col transition-all duration-700 ease-out lg:min-h-[560px]"
             style={{
               opacity: inView ? 1 : 0,
               transform: inView ? "translateX(0)" : "translateX(-24px)",
@@ -198,15 +190,7 @@ export function TestimonialsSection() {
             </div>
           </div>
 
-          <div
-            className="relative"
-            style={{
-              aspectRatio: "545/560",
-              height: 560,
-              maxWidth: "100%",
-              width: 545,
-            }}
-          >
+          <div className="relative mx-auto w-full max-w-[545px] lg:mx-0 lg:w-[545px] lg:shrink-0">
             <TestimonialImage
               key={activeIndex}
               src={current.image}
