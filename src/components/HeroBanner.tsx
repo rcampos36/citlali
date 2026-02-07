@@ -8,7 +8,7 @@ const paragraph =
   "Crafting interiors that showcase your individuality, elevate your lifestyle, and infuse timeless beauty into every space.";
 
 export function HeroBanner() {
-  const containerRef = useRef<HTMLSectionElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
