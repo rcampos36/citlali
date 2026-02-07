@@ -26,7 +26,7 @@ export function AboutUs() {
       {/* Paragraph + button in same column */}
       <div className="mb-8 flex w-full flex-col gap-6 sm:mb-10 sm:gap-8">
         <p className="font-heading w-full max-w-full text-2xl font-normal leading-[1.2] tracking-[1px] text-[#171717] sm:text-[32px] md:text-[40px]">
-          In 2010, a passionate team of designers founded Aurelo with a simple
+          In 2010, a passionate team of designers founded Citlali with a simple
           mission to transform bold visions into timeless interiors. We&apos;re
           known for more than just designing spaces. We craft experiences that
           inspire, comfort, and endure.

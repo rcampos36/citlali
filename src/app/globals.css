@@ -9,6 +9,11 @@ section[id] {
   scroll-margin-top: 80px;
 }
 
+/* Blog section: stop so the "Our Blog" title sits just below the header */
+#blog {
+  scroll-margin-top: 220px;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

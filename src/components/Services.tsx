@@ -46,7 +46,7 @@ const services = [
 export function Services() {
   return (
     <section
-      id="services"
+      id="service"
       className="w-full py-[75px] font-sans"
       aria-label="Our Services"
     >
@@ -84,7 +84,7 @@ export function Services() {
               <p className="text-base leading-relaxed text-[#171717]">
                 {service.description}
               </p>
-              <a href="/quote" className="btn-outline">
+              <a href="#" className="btn-outline">
                 {service.cta}
               </a>
             </div>

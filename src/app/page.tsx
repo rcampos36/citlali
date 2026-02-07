@@ -5,6 +5,7 @@ import { WorkingProcessSection } from "@/components/WorkingProcessSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { BlogSection } from "@/components/BlogSection";
 import { BottomBanner } from "@/components/BottomBanner";
+import { Footer } from "@/components/Footer";
 import { ProjectsSection } from "@/components/ProjectsSection";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <BlogSection />
       </main>
       <BottomBanner />
+      <Footer />
     </>
   );
 }

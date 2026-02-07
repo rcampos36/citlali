@@ -79,8 +79,8 @@ export function BlogSection() {
 
   return (
     <section
-      ref={sectionRef}
       id="blog"
+      ref={sectionRef}
       className="w-full py-[75px] font-sans"
       aria-label="Our Blog"
     >

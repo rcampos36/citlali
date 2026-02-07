@@ -7,7 +7,7 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "Aurelo turned our apartment into a space we never want to leave. From the first consultation, they truly listened to our ideas and understood our lifestyle. Every corner feels intentional — from the way the light moves through the rooms to the carefully chosen textures and colors. The end result is not just beautiful, but deeply personal, making it feel completely ours in every sense. It's more than interior design; it's a space that tells our story.",
+      "Citlali turned our apartment into a space we never want to leave. From the first consultation, they truly listened to our ideas and understood our lifestyle. Every corner feels intentional — from the way the light moves through the rooms to the carefully chosen textures and colors. The end result is not just beautiful, but deeply personal, making it feel completely ours in every sense. It's more than interior design; it's a space that tells our story.",
     name: "Sarah Meri",
     title: "Residential Client",
     image: "/images/Slide-Image-1.jpg",
@@ -16,7 +16,7 @@ const testimonials = [
   {
     id: 2,
     quote:
-      "Working with Aurelo was a game-changer for our office. They transformed a dull corporate space into an inspiring environment that our team actually enjoys. The attention to detail and understanding of how we work made every decision feel right. We've had countless compliments from clients and visitors.",
+      "Working with Citlali was a game-changer for our office. They transformed a dull corporate space into an inspiring environment that our team actually enjoys. The attention to detail and understanding of how we work made every decision feel right. We've had countless compliments from clients and visitors.",
     name: "James Chen",
     title: "Commercial Client",
     image: "/images/Slide-Image-2.jpg",
@@ -25,7 +25,7 @@ const testimonials = [
   {
     id: 3,
     quote:
-      "From concept to completion, Aurelo exceeded our expectations. Our home now reflects who we are — refined, warm, and full of character. They guided us through every choice without ever overpowering our vision. We couldn't be happier with the result.",
+      "From concept to completion, Citlali exceeded our expectations. Our home now reflects who we are — refined, warm, and full of character. They guided us through every choice without ever overpowering our vision. We couldn't be happier with the result.",
     name: "Elena Rodriguez",
     title: "Residential Client",
     image: "/images/Slide-Image-3.jpg",
