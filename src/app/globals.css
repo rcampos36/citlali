@@ -73,6 +73,21 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+/* White button: white background, black text; same hover as .btn-outline (dark fill from center, text white) */
+.btn-white {
+  @apply font-button inline-flex h-12 w-[200px] flex-shrink-0 items-center justify-center rounded-none border border-transparent text-base font-semibold text-[#1a1a1a];
+  background-color: #ffffff;
+  background-image: radial-gradient(circle at center, #1a1a1a 0%, #1a1a1a 50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0% 0%;
+  transition: background-size 0.75s ease-out, color 0.6s ease-out;
+}
+.btn-white:hover {
+  background-size: 250% 250%;
+  color: #ffffff;
+}
+
 /* Force heading font on span inside h1 (overrides font-sans from parent section) */
 h1 span:not([aria-hidden]) {
   font-family: var(--font-host-grotesk) !important;

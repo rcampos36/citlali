@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${inter.variable} ${hostGrotesk.variable} min-h-screen bg-white antialiased`}
       >
         <Header />
-        <div className="mx-auto w-full max-w-[1320px] px-4 pt-[80px] md:px-0">
+        <div className="mx-auto w-full max-w-[1320px] px-4 pt-[80px] md:px-0 overflow-x-visible">
           {children}
         </div>
       </body>
