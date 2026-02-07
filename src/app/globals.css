@@ -1,26 +1,158 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset scroll targets so content isn’t hidden under the fixed header (80px) */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --content-max-width: 1320px;
+  --btn-width: 200px;
+  --btn-height: 48px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-host-grotesk);
+  --font-button: var(--font-host-grotesk);
+  --font-mono: ui-monospace, monospace;
+  --width-content: var(--content-max-width);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+  --font-heading: var(--font-host-grotesk);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: #4a4c56;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Primary button: same styles for all primary CTAs (header, About, etc.) */
+.btn-primary {
+  @apply font-button inline-flex h-12 w-[200px] flex-shrink-0 items-center justify-center rounded-none border border-[#1a1a1a] text-base font-semibold text-white;
+  background-color: #1a1a1a;
+  background-image: radial-gradient(circle at center, #ffffff 0%, #ffffff 50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0% 0%;
+  transition: background-size 0.75s ease-out, color 0.6s ease-out;
+}
+.btn-primary:hover {
+  background-size: 250% 250%;
+  color: #1a1a1a;
+}
+
+/* Outline button: same size/font as primary, border only, no background */
+.btn-outline {
+  @apply font-button inline-flex h-12 w-[200px] flex-shrink-0 items-center justify-center rounded-none border border-[#1a1a1a] text-base font-semibold text-[#1a1a1a];
+  background-color: transparent;
+  background-image: radial-gradient(circle at center, #1a1a1a 0%, #1a1a1a 50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0% 0%;
+  transition: background-size 0.75s ease-out, color 0.6s ease-out;
+}
+.btn-outline:hover {
+  background-size: 250% 250%;
+  color: #ffffff;
+}
+
+/* Force heading font on span inside h1 (overrides font-sans from parent section) */
+h1 span:not([aria-hidden]) {
+  font-family: var(--font-host-grotesk) !important;
+}
+
+/* Image load: white overlay split reveal (top slides up, bottom slides down) */
+@keyframes reveal-split-top {
+  to {
+    transform: translateY(-100%);
+  }
+}
+@keyframes reveal-split-bottom {
+  to {
+    transform: translateY(100%);
+  }
+}
+.animate-reveal-split-top {
+  animation: reveal-split-top 0.9s ease-out forwards;
+}
+.animate-reveal-split-bottom {
+  animation: reveal-split-bottom 0.9s ease-out forwards;
+}
+
+/* Image load: zoomed in from start (during overlay), zoom out when overlay finishes; translateZ(0) keeps GPU layer to avoid flicker */
+@keyframes reveal-zoom {
+  0% { transform: scale(1.1) translateZ(0); }
+  100% { transform: scale(1) translateZ(0); }
+}
+.animate-reveal-zoom {
+  animation: reveal-zoom 1.5s ease-in-out 0.7s both;
+  backface-visibility: hidden;
+}
+/* Overlay panels: GPU layer to avoid flicker when they finish */
+.animate-reveal-split-top,
+.animate-reveal-split-bottom {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Stats: fade in from bottom */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Hero banner: exactly 5 vertical lines — same style as header border (#e5e5e5) */
+.hero-bg-lines {
+  --line: #e5e5e5;
+  --w: 0.06%; /* thin line width as % so no repeat */
+  background-color: #ffffff;
+  background-image: linear-gradient(
+    90deg,
+    var(--line) 0,
+    var(--line) var(--w),
+    transparent var(--w),
+    transparent calc(25% - var(--w)),
+    var(--line) calc(25% - var(--w)),
+    var(--line) 25%,
+    transparent 25%,
+    transparent calc(50% - var(--w)),
+    var(--line) calc(50% - var(--w)),
+    var(--line) 50%,
+    transparent 50%,
+    transparent calc(75% - var(--w)),
+    var(--line) calc(75% - var(--w)),
+    var(--line) 75%,
+    transparent 75%,
+    transparent calc(100% - var(--w)),
+    var(--line) calc(100% - var(--w)),
+    var(--line) 100%
+  );
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
