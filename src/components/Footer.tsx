@@ -108,14 +108,14 @@ export function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 font-sans text-[16px] text-[#171717]">
             <span>
               Designed By:{" "}
-              <a href="widflow.com" className="transition-colors hover:underline">
-              widflow
+              <a href="https://widflow.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:underline">
+                widflow
               </a>
             </span>
             <span>
               Developed by:{" "}
-              <a href="rcdev.me" className="transition-colors hover:underline">
-              rcdev
+              <a href="https://rcdev.me" target="_blank" rel="noopener noreferrer" className="transition-colors hover:underline">
+                rcdev
               </a>
             </span>
           </div>
